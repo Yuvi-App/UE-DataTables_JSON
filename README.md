@@ -1,11 +1,22 @@
-# uasset-dt-to-json
+## UE-DataTables_JSON
+Simply put, I updated antoshre project to have it properly display Unicode in UTF as before it would only show Unicode hex. Then made the script batchable for running it on many files at once. 
+Just create a batch file, and it will label and dump the JSON to a file in bulk.
+
+I'll add additional things as needed for my projects.
+
+
+
+
+
+## Orginal Info Below
+### uasset-dt-to-json
 Parses UAsset files with embedded DataTables and dumps the contents to JSON.  Tracks byte offsets to allow easier hex editing.
 
 DataTables are how the Unreal 3 engine handles database-like data for objects inside the engine.  The source is technically visible but I wanted something that wasn't bound by license issues and decided to try reverse-engineering it from first principles.  Consequently this will probably only work on Bloodstained: Ritual Of The Night datafiles as I have no other examples to work from.
 
 This script is most definitely a work-in-progress.  Not all property types are supported, and not all those that are supported are 100% correct in all cases.  Pull requests welcome.
 
-## Usage
+### Usage
 
 JSON output is printed to standard out.  It can and will quickly overflow the terminal scrollback buffer, re-directing to a file is basically mandatory.
 
@@ -24,7 +35,7 @@ optional arguments:
   --values-only  Only print values, not offset/length information
 ```
 
-## Example output:
+### Example output:
 
 ```
 {

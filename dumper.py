@@ -773,5 +773,9 @@ if __name__ == "__main__":
 		#Grab the export'ed stuff we actually care about
 		items = [ iclass(obj) for obj in uasset.Summary.Exports[0].Object.ObjectData.Data]
 		#JSONify it
-		print(json.dumps(items, cls=UAssetEncoder, indent=2))
+		jsondata = json.dumps(items, cls=UAssetEncoder, ensure_ascii=False, indent=2).replace(r'\u0000', '')
+		print(jsondata)
+		filename = os.path.basename(os.path.normpath(args.filename.name))
+		with open(filename + '.json', 'w', encoding='utf-8') as f:
+			f.write(jsondata)
 	sys.exit()
